@@ -1,0 +1,78 @@
+@extends('layouts.app')
+
+@section('contentApp')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">{{ __('EDITAR RESULTADO') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+             
+
+                    
+                   
+
+                    
+   
+@csrf
+    <div class="container mt-5">
+                        <div class="col-10 m-auto">
+                            <div class="form-group">
+                            @foreach($resultado as $res)
+                            <form method="POST" action="{{ url('/')}}/resultadoUpdate/{{$res['id_resultado']}}">
+                                            @csrf
+                                    
+                                    <input type="hidden" value="{{Auth::user() -> id}}" name="id_encargado">
+                                    <input type="hidden" value="1" name="idCliente">
+                                    <input type="hidden" value="1" name="resultado">
+                                    <div class="form-row">
+                                        <div class="col-md-4 mb-3">
+                                            <label>Identificador muestra:</label>
+                                            <input type="number" class="form-control" name="id_muestra" value="{{$id_muestra}}" readonly>
+                                        </div>
+                                        
+                                            <div class="col-md-4 mb-3">
+                                                <label for="fecha_rrecepcion"><b>Fecha Resultado:</b></label>
+                                                <input type="date" class="form-control" id="fecha_rrecepcion" name="fecha_rrecepcion" value="{{$res['fecha_resultado']}}">
+                                            </div>
+
+                                            @foreach ($parametros as $parametro)
+                                            
+                                                <div class="col-md-4 mb-3">
+                                                    <label>{{$parametro['Nom_parametro']}}:</label>
+                                                    <input type="number" class="form-control" name="{{$parametro['id_parametro']}}" value="{{$res[$parametro['nom_bd']]}}">
+                                                </div>
+
+                                            @endforeach
+                                        @endforeach
+
+                                        <div class="col-md-4 mb-3 " style="margin-top:30px;">
+
+                                            <button class="btn btn-primary">
+                                                <i class="bi bi-badge-ad"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+</form>
+                    
+         
+
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
