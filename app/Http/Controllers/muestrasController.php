@@ -60,6 +60,7 @@ class muestrasController extends Controller
 
         $datos = array(
             "documento"            => $request->input("documento"),
+            "NombreCompleto"       => $request->input("NombreCompleto"),
             "fecha_rrecepcion"     => $request->input("fecha_rrecepcion"),
             "hora_rrecepcion"      => $request->input("hora_rrecepcion"),
             "fecha_muestreo"       => $request->input("fecha_muestreo"),
@@ -92,6 +93,7 @@ class muestrasController extends Controller
     {
         $datos = array(
             "documento"            => $request->input("documento"),
+            "NombreCompleto"       => $request->input("NombreCompleto"),
             "fecha_rrecepcion"     => $request->input("fecha_rrecepcion"),
             "hora_rrecepcion"      => $request->input("hora_rrecepcion"),
             "fecha_muestreo"       => $request->input("fecha_muestreo"),

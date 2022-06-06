@@ -24,6 +24,11 @@
                             </div>
 
                             <div class="col-md-4 mb-3">
+                                    <label for="NombreCompleto">Nombre Cliente:</label>
+                                    <input type="text" class="form-control" id="NombreCompleto" name="NombreCompleto" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
                                 <label for="fecha_rrecepcion"><b>Fecha Recepción:</b></label>
                                 <input type="date" class="form-control" id="fecha_rrecepcion" name="fecha_rrecepcion" required>
                             </div>
