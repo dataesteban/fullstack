@@ -18,7 +18,7 @@ class MailController extends Controller {
     Mail::send('paginas.correo', $data, function($message) use ($to_name, $to_email, $subject, $file) {
     $message->to($to_email, $to_name)
     ->subject($subject);
-    $message->from('ecastaneda4834@misena.edu.co','Lab');
+    $message->from('h2olab@educandobien.com','Lab');
     $message->attach($file->getRealPath(), array(
         'as' => $file->getClientOriginalName(), // If you want you can chnage original name to custom name      
         'mime' => $file->getMimeType())

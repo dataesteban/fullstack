@@ -6,9 +6,13 @@
         <div class="col-lg-12">
             <div class="card ">
                 <div class="card-header text-center" style="text-aling: center;">
-                    <div class="p-3 mb-2 bg-dark text-white">
-                        <h4>RESULTADOS</h4>
+                    <div class="p-3 mb-2 text-black">
+                        <h3><b>RESULTADOS</b></h3>
+                        <div>
+                            <img class="float-sm-right" src="{{ asset('img/logo-pro.jpg') }}" style="border-radius:300px">
+                        </div>
                     </div>
+                   
                     @foreach ($resultado as $res)
                         <div class="row m-0">
                             <div class="col-md-4 mb-3">
@@ -51,14 +55,21 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="p-3 mb-2 bg-dark text-white">
-                        <h4>DATOS MUESTRA</h4>
+                    <div class="card-header text-center" style="text-aling: center;">
+                        <div class="p-3 mb-2 text-black">
+                            <h3><b>DATOS MUESTRA</b></h3>
+                        </div>
                     </div>
                     @foreach ($muestra as $mu)
                         <div class="row m-0">
                             <div class="col-md-4 mb-3">
                                 <label><b>Documento:</b></label>
                                 <label class="form-control">{{ $mu['documento'] }}</label>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label><b>Nombre Cliente:</b></label>
+                                <label class="form-control">{{ $mu['NombreCompleto'] }}</label>
                             </div>
 
                             <div class="col-md-4 mb-3">
@@ -120,8 +131,11 @@
                                 <label class="form-control">{{ $mun }}</label>
                             </div>
                         </div>
+                        <br>
+                    <br>
+                    <br>
                     @endforeach
-
+                    
                     <div class="form-group rom-mb-8 row align-items-center justify-content-center">
                         <div class="col-3">
                             <button type="button" type="submit"  class="w-100 btn btn-outline-info">

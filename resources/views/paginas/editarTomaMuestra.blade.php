@@ -35,6 +35,10 @@
                                             <input type="number" class="form-control" id="documento" name="documento" value="{{ $Muestra['documento'] }}">
                                         </div>
 
+                                        <div class="col-md-4 mb-3">
+                                            <label for="NombreCompleto">Nombre del Cliente:</label>
+                                            <input type="text" class="form-control" id="NombreCompleto" name="NombreCompleto" value="{{ $Muestra['NombreCompleto'] }}">
+                                        </div>
 
                                         <div class="col-md-4 mb-3">
                                             <label for="fecha_rrecepcion">Fecha Recepción:</label>
@@ -91,10 +95,7 @@
                                             <input type="text" class="form-control" id="latitud" name="latitud" value="{{ $Muestra['latitud'] }}">
                                         </div>
 
-                                        <div class="col-md-4 mb-3">
-                                            <label for="idCliente">Cliente:</label>
-                                            <input type="text" class="form-control" id="idCliente" name="idCliente" value="{{ $Muestra['idCliente'] }}">
-                                        </div>
+
 
                                         <div class="col-md-4 mb-3">
                                             <label for="id_departamento">Departamento</label>

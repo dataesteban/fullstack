@@ -32,8 +32,13 @@
 
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <label for="documento">Documento:</label>
+                                        <label for="documento">Documento Cliente:</label>
                                         <input type="text" class="form-control" id="documento" name="documento" value="{{ $Muestra['documento'] }}" readonly>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <label for="NombreCompleto">Nombre Cliente:</label>
+                                        <input type="text" class="form-control" id="NombreCompleto" name="NombreCompleto" value="{{ $Muestra['NombreCompleto'] }}" readonly>
                                     </div>
 
                                     <div class="col-md-4 mb-3">
@@ -111,10 +116,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-4 mb-3">
-                                        <label for="idCliente">Cliente:</label>
-                                        <input type="text" class="form-control" id="idCliente" name="idCliente" value="{{ $Muestra['idCliente'] }}" readonly>
-                                    </div>
+                                   
 
 
                             </form>
