@@ -59,6 +59,8 @@ Route::resource('/usuario_cliente', 'usuario_clienteController');
 Route::get('/usuario_clienteBuscar/{cadena}', 'usuario_clienteController@buscarUsuario');
 
 Route::post('/register', 'UsersController@store');
+Route::post('/desactivar/{id}', 'UsersController@deshabilitar');
+
 
 Route::resource('/resultado', 'resultadoController');
 

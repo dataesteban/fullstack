@@ -53,6 +53,22 @@
                                 <i class="bi bi-trash"></i>
                                 
                             </a>
+                            <div v-if="vari.estado ==0">
+                                <a class="btn btn-info" href="#"
+                                v-on:click="desactivar(vari.id)">
+                                    <i class="bi bi-archive-fill"></i>
+                                    
+                                </a>
+                            </div>
+                            <div v-if="vari.estado ==1">
+                                <a class="btn btn-info" href="#"
+                                v-on:click="desactivar(vari.id)">
+                                    <i class="bi bi-check-square-fill"></i>
+                                    
+                                </a>
+                            </div>
+
+                            
 
                             </div>
                             </td>

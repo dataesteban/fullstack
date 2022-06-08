@@ -42,11 +42,18 @@
      template: `
      <div>
  
-         <a v-if="respuesta_consulta == 0"
-         class="btn btn-secondary" 
-         :href="'http://127.0.0.1:8000/registro_resultado_muestra/'+id_muestra">
-         <i class="bi bi-clipboard-plus"></i>
-         </a>
+         <div v-if="respuesta_consulta == 0">
+            <a class="btn btn-danger" v-on:click="eliminarMuestra(Muestra.id_muestra)">
+                <i class="bi bi-trash"></i>
+            </a>
+            <a 
+            class="btn btn-secondary" :href="'http://127.0.0.1:8000/registro_resultado_muestra/'+id_muestra">
+                <i class="bi bi-clipboard-plus"></i>
+            </a>
+         
+         </div>
+
+         
  
      </div>
      `,
@@ -200,6 +207,15 @@
                  });
              }
          },
+        desactivar: function (idCliente) {
+            var eliminar = confirm("Desea Deshabilitar Este Usuario?");
+            if (eliminar == true) {
+                axios.post('http://127.0.0.1:8000/desactivar/' + idCliente).then((respuesta) => {
+                    console.log(respuesta);
+                    window.location.href = "http://127.0.0.1:8000/users/";
+                });
+            }
+        },
  
          eliminarParametro: function (id_parametro) {
              var eliminar = confirm("Desea Eliminar Este Registro?");
