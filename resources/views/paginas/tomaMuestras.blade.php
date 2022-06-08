@@ -55,10 +55,6 @@
                                                 <i class="bi bi-plus-circle"></i>
                                             </a>
                                             <br>
-                                            <a class="btn btn-danger" v-on:click="eliminarMuestra(Muestra.id_muestra)">
-                                                <i class="bi bi-trash"></i>
-                                            </a>
-                                            <br>
                                             <!-- Muestra u coulta botón dependiendo de si la muestra ya tiene resultados -->
                                             <mostrar-btn v-bind:id_muestra="Muestra.id_muestra"></mostrar-btn>
 

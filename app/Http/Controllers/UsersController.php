@@ -55,6 +55,17 @@ class usersController extends Controller
             return redirect("/users");
         }
     }
+    public function deshabilitar($id){
+        $users = usersModel::where("id", $id)->get();
+        $estado = $users[0]['estado'];
+        if ($estado == 1){
+            $consulta = usersModel::where('id', $id)->update(["estado" =>0]);
+            echo ("Hola " .$consulta);
+        }else{
+            $consulta = usersModel::where('id', $id)->update(["estado" =>1]);
+            echo ("Hola " .$consulta);
+        }            
+    }
 
     public function store(Request $request){
         $datos = array(
