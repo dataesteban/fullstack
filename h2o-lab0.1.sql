@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2022 a las 01:48:41
+-- Tiempo de generación: 08-06-2022 a las 03:15:36
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -147,6 +147,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `muestra` (
   `id_muestra` int(12) NOT NULL,
   `documento` int(11) NOT NULL,
+  `NombreCompleto` varchar(70) NOT NULL,
   `fecha_rrecepcion` date NOT NULL,
   `hora_rrecepcion` time NOT NULL,
   `fecha_muestreo` date NOT NULL,
@@ -174,16 +175,13 @@ CREATE TABLE `muestra` (
 -- Volcado de datos para la tabla `muestra`
 --
 
-INSERT INTO `muestra` (`id_muestra`, `documento`, `fecha_rrecepcion`, `hora_rrecepcion`, `fecha_muestreo`, `hora_muestreo`, `punto_muestreo`, `direccion`, `tipo_muestra`, `Observaciones`, `Caudal`, `Temperatura`, `PH`, `Conductividad`, `Volumen`, `Tiempo`, `longitud`, `altitud`, `latitud`, `id_departamento`, `id_municipio`, `created_at`, `updated_at`) VALUES
-(13, 1233, '2022-02-23', '11:56:00', '2021-09-23', '11:56:00', 'cALI', 'adas', 'Compuesta', 'adas', 'dasd', 'sdas', 'ada', 'das', 'adsd', 'dasd', 'jfakljdklasjklasjdsa', 'adsd', 'ad', 11, 530, '2021-09-23 16:56:54', '2022-06-01 01:51:06'),
-(15, 12312, '2021-12-19', '15:52:00', '2021-12-12', '15:52:00', '12313', '12312', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '312312', '312', '23423', 13, 626, '2021-12-12 20:52:38', '2022-02-22 06:00:17'),
-(18, 11111, '2022-05-05', '13:10:00', '2022-05-05', '13:10:00', 'ayaya', '2', 'Compuesta', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2', '2', '2', 15, 679, '2022-05-05 18:11:12', '2022-05-05 23:11:48'),
-(27, 454545, '2022-12-31', '12:59:00', '2022-12-31', '12:59:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '2000', 1, 13, '2022-06-01 19:21:36', '2022-06-02 00:57:55'),
-(28, 46556465, '2022-01-01', '12:59:00', '2022-12-31', '12:59:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '2', 2, 114, '2022-06-01 22:08:43', '2022-06-02 03:09:14'),
-(29, 123123, '2022-12-31', '12:59:00', '2022-12-31', '12:59:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '2', 12, 602, '2022-06-01 23:26:58', '2022-06-02 04:27:16'),
-(30, 88888, '2022-06-09', '23:42:00', '2022-06-22', '23:44:00', '2', '4', 'Compuesta', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4', '7', '4', 18, 785, '2022-06-11 04:43:02', NULL),
-(31, 88888, '2022-06-23', '23:47:00', '2022-06-15', '23:47:00', '1', '3', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4', '55', '6', 17, 722, '2022-06-11 04:44:43', NULL),
-(32, 1212, '2022-06-29', '18:40:00', '2022-06-29', '18:40:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '1', 16, 710, '2022-06-29 23:40:55', NULL);
+INSERT INTO `muestra` (`id_muestra`, `documento`, `NombreCompleto`, `fecha_rrecepcion`, `hora_rrecepcion`, `fecha_muestreo`, `hora_muestreo`, `punto_muestreo`, `direccion`, `tipo_muestra`, `Observaciones`, `Caudal`, `Temperatura`, `PH`, `Conductividad`, `Volumen`, `Tiempo`, `longitud`, `altitud`, `latitud`, `id_departamento`, `id_municipio`, `created_at`, `updated_at`) VALUES
+(13, 1233, '', '2022-02-23', '11:56:00', '2021-09-23', '11:56:00', 'cALI', 'adas', 'Compuesta', 'adas', 'dasd', 'sdas', 'ada', 'das', 'adsd', 'dasd', 'jfakljdklasjklasjdsa', 'adsd', 'ad', 11, 530, '2021-09-23 16:56:54', '2022-06-01 01:51:06'),
+(15, 12312, '', '2021-12-19', '15:52:00', '2021-12-12', '15:52:00', '12313', '12312', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '312312', '312', '23423', 13, 626, '2021-12-12 20:52:38', '2022-02-22 06:00:17'),
+(18, 11111, '', '2022-05-05', '13:10:00', '2022-05-05', '13:10:00', 'ayaya', '2', 'Compuesta', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2', '2', '2', 15, 679, '2022-05-05 18:11:12', '2022-05-05 23:11:48'),
+(27, 454545, '', '2022-12-31', '12:59:00', '2022-12-31', '12:59:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '2000', 1, 13, '2022-06-01 19:21:36', '2022-06-02 00:57:55'),
+(28, 46556465, 'Esteban', '2022-01-01', '12:59:00', '2022-12-31', '12:59:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '2', 2, 114, '2022-06-01 22:08:43', '2022-06-08 00:37:54'),
+(29, 123123, 'Kioko Kashimoto', '2022-12-31', '12:59:00', '2022-12-31', '12:59:00', 'aca', '2', 'Simple', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwe', '1', '2', 12, 602, '2022-06-01 23:26:58', '2022-06-07 07:45:06');
 
 -- --------------------------------------------------------
 
@@ -1394,7 +1392,9 @@ INSERT INTO `resultado` (`id_resultado`, `fecha_resultado`, `id_muestra`, `id_pa
 (23, '2022-05-12', 24, NULL, 1, 11, '56565', '56', '56', '56', '56', '56', '1', '2022-05-31 23:38:47', '2022-05-31 23:38:47'),
 (24, '2022-06-15', 25, NULL, 1, 17, '12', '11', '11', '11', '11', '11', '1', '2022-06-01 15:18:01', '2022-06-01 15:18:01'),
 (30, '2022-06-09', 26, NULL, 1, 17, '456', '456', '45', '456', '456', '963', '1', '2022-06-01 17:50:06', '2022-06-02 00:58:40'),
-(32, '2022-05-31', 28, NULL, 1, 31, '15', '15', '15', '15', '15', '15', '1', '2022-06-01 22:09:31', '2022-06-02 04:39:31');
+(32, '2022-05-31', 28, NULL, 1, 31, '15', '15', '15', '15', '15', '15', '1', '2022-06-01 22:09:31', '2022-06-02 04:39:31'),
+(34, '2022-06-03', 29, NULL, 1, 33, '23', '23', '23', '23', '23', '23', '1', '2022-06-08 00:44:23', '2022-06-08 00:44:23'),
+(35, '2022-12-31', 27, NULL, 1, 33, '1', '1', '1', '0', '4', '4', '1', '2022-06-08 01:01:11', '2022-06-08 01:01:11');
 
 -- --------------------------------------------------------
 
@@ -1442,7 +1442,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `Tipo_usuario`, `estado`, `created_at`, `updated_at`) VALUES
-(31, 'Esteban Castañeda Herreño', 'estecasta2000@gmail.com', NULL, '$2y$10$dSNvqzUW2Jf00wyIFFB1S.EYmFTj4Wekt.3ECahVq0wuUjF9zm/dG', 0, 0, NULL, NULL);
+(32, 'Ossa', 'ossa1@gmail.com', NULL, '$2y$10$3.dwjrZmmj3Q/W.2IWIvm.BVSPKKo8XE7kig3J2FXdby/LNLGZSCy', 0, 0, NULL, '2022-06-08 04:43:12'),
+(33, 'Esteban Castañeda Herreño', 'estecasta2000@gmail.com', NULL, '$2y$10$D0ytb684vkoRd0x6nDPpZubcN0VPesO/kN1n6ksCvgiHoIRfWN9xa', 0, 0, NULL, NULL),
+(34, 'prueba', 'prueba@example.com', NULL, '$2y$10$tkM8y61F4wS7d3WqfpQcOesueTNYlPFJs/uteSQMbBHRtHqhEtimG', 0, 0, NULL, '2022-06-08 05:43:48');
 
 -- --------------------------------------------------------
 
@@ -1454,9 +1456,9 @@ CREATE TABLE `usuario_cliente` (
   `idCliente` int(12) NOT NULL,
   `documento` int(10) NOT NULL,
   `NombreCompleto` varchar(70) NOT NULL,
-  `Genero` enum('M','F') DEFAULT NULL,
-  `Correo` varchar(50) DEFAULT NULL,
-  `Telefono` bigint(100) DEFAULT NULL,
+  `Genero` enum('M','F') NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Telefono` bigint(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -1467,11 +1469,7 @@ CREATE TABLE `usuario_cliente` (
 
 INSERT INTO `usuario_cliente` (`idCliente`, `documento`, `NombreCompleto`, `Genero`, `Correo`, `Telefono`, `created_at`, `updated_at`) VALUES
 (37, 832490, 'jashdk', 'M', 'prueba2@gmail.com', 3243123456, NULL, NULL),
-(38, 45456, 'djsaj', 'M', 'bulevarnorte@gmail.com', 8878, NULL, NULL),
-(39, 123, 'asda', 'M', 'prueba@gmail.com', 3243123456, NULL, NULL),
-(41, 123123, '1231', 'M', 'prueba2@gmail.com', 3243123456, NULL, NULL),
-(43, 88888, 'ffff', 'F', 'aaa@gmail.com', 132343454, NULL, '2022-06-11 09:43:48'),
-(44, 1212, 'Esteban', NULL, NULL, NULL, NULL, NULL);
+(38, 45456, 'djsaj', 'M', 'bulevarnorte@gmail.com', 8878, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -1549,8 +1547,7 @@ ALTER TABLE `users`
 -- Indices de la tabla `usuario_cliente`
 --
 ALTER TABLE `usuario_cliente`
-  ADD PRIMARY KEY (`idCliente`),
-  ADD UNIQUE KEY `documento` (`documento`);
+  ADD PRIMARY KEY (`idCliente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -1584,25 +1581,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `muestra`
 --
 ALTER TABLE `muestra`
-  MODIFY `id_muestra` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_muestra` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `resultado`
 --
 ALTER TABLE `resultado`
-  MODIFY `id_resultado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_resultado` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_cliente`
 --
 ALTER TABLE `usuario_cliente`
-  MODIFY `idCliente` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `idCliente` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Restricciones para tablas volcadas
