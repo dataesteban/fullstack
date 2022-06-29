@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\muestrasModel;
 use App\MunicipioModel;
+use App\usuario_clienteModel;
 
 class muestrasController extends Controller
 {
@@ -91,9 +92,20 @@ class muestrasController extends Controller
 
     public  function store(Request $request)
     {
+        $cliente = usuario_clienteModel::where("documento",$request->input("documento"))->get()->count();
+        if($cliente==0){
+
+            $arregloCliente = array(
+                "documento"            => $request->input("documento"),
+                "NombreCompleto"       => $request->input("NombreCompleto")
+            );
+
+            $insertarCliente = usuario_clienteModel::insert($arregloCliente);
+        }
+    
         $datos = array(
             "documento"            => $request->input("documento"),
-            "NombreCompleto"       => $request->input("NombreCompleto"),
+            
             "fecha_rrecepcion"     => $request->input("fecha_rrecepcion"),
             "hora_rrecepcion"      => $request->input("hora_rrecepcion"),
             "fecha_muestreo"       => $request->input("fecha_muestreo"),

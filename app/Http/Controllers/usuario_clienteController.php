@@ -85,7 +85,7 @@ class usuario_clienteController extends Controller
             if($request->ajax()){
     
             if($textoUsuario === '-'){
-                $usuario_cliente = usuario_clienteModel::all();
+                $usuario_cliente = usuario_clienteModel::orderBy('idCliente', 'DESC')->get();;
                 
                 
                 return $usuario_cliente;
